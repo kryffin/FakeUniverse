@@ -35,12 +35,14 @@ La liste statique des planètes est une HashMap<String, Planet> identifiant les 
 ### 13/11/2020
 
 Suivi du cours pour la mise en place du projet sans grands soucis.  
+Changement du @PostMapping de l'ajout d'une planète en @PutMapping.  
+Ajout d'une méthode en @DeleteMapping avec un paramètre de chemin permettant la suppression d'une planète par son nom.  
 
 Premiers tests via Postman :
 - Ajout d'une planète : ok
 - Affichage d'une planète récupérée par son nom : ok
-- Affichage de toute les planètes : ok  
+- Affichage de toute les planètes : ok
+- Suppression d'une planète : ok  
 
 Travail restant :
-- Ajouter la suppression d'une planète
 - Mettre en place des tests ?

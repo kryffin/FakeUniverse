@@ -23,9 +23,14 @@ public class PlanetController {
         return dao.findByName(name);
     }
 
-    @PostMapping(value="Bodies")
+    @PutMapping(value="Bodies")
     public void addBody(@RequestBody Planet body) {
         dao.save(body);
+    }
+
+    @DeleteMapping(value="/Bodies/{name}")
+    public void removePlanet(@PathVariable String name) {
+        dao.remove(name);
     }
 
 }
