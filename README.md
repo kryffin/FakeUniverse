@@ -46,3 +46,15 @@ Premiers tests via Postman :
 
 Travail restant :
 - Mettre en place des tests ?
+
+### 16/11/2020
+
+Modification du @PutMapping en @PostMapping, en effet Put correspond à la modification et non à l'ajout.  
+Renommage de *distanceFromSun* en *distanceFromOrigin* par cohérence.
+En effet un univers fictif ne possède pas forcément notre Soleil, et ne possède pas forcément de soleil (ie. étoile de type solaire).
+L'origine étant ici l'équivalent du (0,0) de l'univers fictif voulu par l'utilisateur.  
+Renommage des planètes en *Body*, désignant plus globalement l'ensemble des corps célestes, pour notamment créer des étoiles (qui ne sont pas des planètes).  
+Rédaction du rapport et ajout de celui-ci (dans ses formats .docx et .pdf) au git.  
+
+Test via Postman :
+- Ajout d'une planète (étant donné la modification apportée) : ok  

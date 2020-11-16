@@ -1,30 +1,30 @@
 package fr.univlorraine.FakeUniverse.web.controller;
 
-import fr.univlorraine.FakeUniverse.dao.IPlanetDAO;
-import fr.univlorraine.FakeUniverse.model.Planet;
+import fr.univlorraine.FakeUniverse.dao.IBodyDAO;
+import fr.univlorraine.FakeUniverse.model.CelestialBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-public class PlanetController {
+public class BodyController {
 
     @Autowired
-    private IPlanetDAO dao;
+    private IBodyDAO dao;
 
     @GetMapping(value="/Bodies")
-    public List<Planet> getBodies() {
+    public List<CelestialBody> getBodies() {
         return dao.findAll();
     }
 
     @GetMapping(value="/Bodies/{name}")
-    public Planet getBody(@PathVariable String name) {
+    public CelestialBody getBody(@PathVariable String name) {
         return dao.findByName(name);
     }
 
-    @PutMapping(value="Bodies")
-    public void addBody(@RequestBody Planet body) {
+    @PostMapping(value = "Bodies")
+    public void addBody(@RequestBody CelestialBody body) {
         dao.save(body);
     }
 

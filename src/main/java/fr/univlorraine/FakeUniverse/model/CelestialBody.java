@@ -1,10 +1,10 @@
 package fr.univlorraine.FakeUniverse.model;
 
-public class Planet {
+public class CelestialBody {
 
     private String name;
     private double radius;
-    private double distanceFromSun;
+    private double distanceFromOrigin;
     private double gravity;
 
     public String getName() {
@@ -24,11 +24,11 @@ public class Planet {
     }
 
     public double getDistanceFromSun() {
-        return distanceFromSun;
+        return distanceFromOrigin;
     }
 
     public void setDistanceFromSun(double distanceFromSun) {
-        this.distanceFromSun = distanceFromSun;
+        this.distanceFromOrigin = distanceFromSun;
     }
 
     public double getGravity() {
