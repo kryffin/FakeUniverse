@@ -1,11 +1,27 @@
 package fr.univlorraine.FakeUniverse.model;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class CelestialBody {
 
+    @Id
     private String name;
+
     private double radius;
     private double distanceFromOrigin;
     private double gravity;
+
+    protected CelestialBody() {}
+
+    public CelestialBody(String name, double radius, double distanceFromOrigin, double gravity) {
+        this.name = name;
+        this.radius = radius;
+        this.distanceFromOrigin = distanceFromOrigin;
+        this.gravity = gravity;
+    }
 
     public String getName() {
         return name;

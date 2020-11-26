@@ -1,20 +1,18 @@
 package fr.univlorraine.FakeUniverse.web.controller;
 
-import fr.univlorraine.FakeUniverse.dao.IBodyDAO;
+import fr.univlorraine.FakeUniverse.dao.BodyRepository;
 import fr.univlorraine.FakeUniverse.model.CelestialBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class BodyController {
 
     @Autowired
-    private IBodyDAO dao;
+    private BodyRepository dao;
 
     @GetMapping(value="/Bodies")
-    public List<CelestialBody> getBodies() {
+    public Iterable<CelestialBody> getBodies() {
         return dao.findAll();
     }
 
@@ -30,7 +28,7 @@ public class BodyController {
 
     @DeleteMapping(value="/Bodies/{name}")
     public void removePlanet(@PathVariable String name) {
-        dao.remove(name);
+        dao.deleteById(name);
     }
 
 }
