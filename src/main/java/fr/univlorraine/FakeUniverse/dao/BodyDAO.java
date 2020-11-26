@@ -25,8 +25,7 @@ public class BodyDAO implements IBodyDAO {
 
     @Override
     public void save(CelestialBody body) {
-        if (!bodies.containsKey(body.getName()))
-            bodies.put(body.getName(), body);
+        bodies.put(body.getName(), body);
     }
 
     @Override

@@ -39,12 +39,12 @@ public class CelestialBody {
         this.radius = radius;
     }
 
-    public double getDistanceFromSun() {
+    public double getDistanceFromOrigin() {
         return distanceFromOrigin;
     }
 
-    public void setDistanceFromSun(double distanceFromSun) {
-        this.distanceFromOrigin = distanceFromSun;
+    public void setDistanceFromOrigin(double distanceFromOrigin) {
+        this.distanceFromOrigin = distanceFromOrigin;
     }
 
     public double getGravity() {

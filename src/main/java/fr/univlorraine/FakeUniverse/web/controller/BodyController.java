@@ -5,6 +5,7 @@ import fr.univlorraine.FakeUniverse.model.CelestialBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class BodyController {
 
@@ -21,7 +22,7 @@ public class BodyController {
         return dao.findByName(name);
     }
 
-    @PostMapping(value = "Bodies")
+    @PostMapping(value = "/Bodies")
     public void addBody(@RequestBody CelestialBody body) {
         dao.save(body);
     }
