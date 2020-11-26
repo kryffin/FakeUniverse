@@ -3,11 +3,15 @@ package fr.univlorraine.FakeUniverse.web.controller;
 import fr.univlorraine.FakeUniverse.dao.BodyRepository;
 import fr.univlorraine.FakeUniverse.model.CelestialBody;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class BodyController {
+
+    @Value("${me}")
+    private String me;
 
     @Autowired
     private BodyRepository dao;
@@ -30,6 +34,11 @@ public class BodyController {
     @DeleteMapping(value="/Bodies/{name}")
     public void removePlanet(@PathVariable String name) {
         dao.deleteById(name);
+    }
+
+    @GetMapping(value = "/Quicest")
+    public String getName() {
+        return me;
     }
 
 }
