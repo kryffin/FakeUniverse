@@ -4,8 +4,10 @@ import fr.univlorraine.FakeUniverse.dao.BodyRepository;
 import fr.univlorraine.FakeUniverse.model.CelestialBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+@EnableDiscoveryClient
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class BodyController {
